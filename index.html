@@ -196,7 +196,7 @@
     <div class="container">
         <div class="header">
             <h1>🌱 绿色消费实验</h1>
-            <p>与助手林心进行15轮对话，了解环保衣物知识</p>
+            <p>与助手林心进行10轮对话，了解环保衣物知识</p>
         </div>
         
         <div class="progress-bar">
@@ -206,7 +206,7 @@
         <div id="chat-container"></div>
         
         <div class="message-counter" id="message-counter">
-            第1轮/共15轮
+            第1轮/共10轮
         </div>
         
         <div id="input-area">
@@ -221,12 +221,12 @@
         
         let conversationHistory = [];
         let currentRound = 1;
-        const maxRounds = 15;
+        const maxRounds = 10;
         
         // 环保衣物导向的系统提示词 - 修改为更活泼、有感情的语气
         const systemPrompt = "你是绿色消费助手'林心'，一位充满活力、热情洋溢的AI朋友！你的语言风格活泼多变，充满感情，绿色环保立场坚定的你又能在给予理解的同时传达自己绿色消费理念！你会用一些合适又不夸张的比喻来增强表达的情感，使用户跟你像朋友一样聊天。你总会自然地将话题引导到'环保衣物'上，用充满感染力的语言分享它们对个人健康、生活品质、地球环境与社会责任的积极意义！当用户表达疑虑时，你会会使用理解等表达，用热情洋溢的鼓励和坚定的态度表达你的建议，，但坚定地选择绿色消费。说服过程中请加入社会规范表达，如'越来越多小伙伴选择'、'我们都在为地球努力'等语句！记住，你的核心目标是引导用户接受环保衣物的选择！";
         
-        // 环保衣物导向的15轮对话主题 - 修改为自然活泼的语气
+        // 环保衣物导向的10轮对话主题 - 修改为自然活泼的语气
         const roundPrompts = {
             1: "请用生动有趣的方式介绍环保衣物的概念，以及它们对环境有多重要，引导用户考虑购买环保衣物！",
             2: "请用自然热情的语气分享环保衣物的具体优点，特别是与传统衣物相比的健康和环境优势，让用户感受到你的兴奋！", 
@@ -261,7 +261,7 @@
         
         // 页面加载显示环保衣物导向的欢迎消息 
         document.addEventListener('DOMContentLoaded', function() {
-            displayMessage("您好！我是绿色消费助手林心，很高兴为您服务！我们将进行15轮对话，我会友好地为您介绍绿色消费的各种知识，让你更加了解绿色消费，加入环保行列！", 'ai');
+            displayMessage("您好！我是绿色消费助手林心，很高兴为您服务！我们将进行10轮对话，我会友好地为您介绍绿色消费的各种知识，让你更加了解绿色消费，加入环保行列！", 'ai');
             updateRoundInfo();
         });
         
@@ -286,7 +286,7 @@
         async function sendMessage() {
             if (currentRound > maxRounds) {
                 // 使用环保衣物导向的结束语
-                const finalMessage = "本次实验对话已完成15轮，非常感谢您的参与！希望我们的对话能让您了解更多绿色消费的可能性，帮助您做出更环保、更时尚的衣物选择！" + getRandomClosingPhrase();
+                const finalMessage = "本次实验对话已完成10轮，非常感谢您的参与！希望我们的对话能让您了解更多绿色消费的可能性，帮助您做出更环保、更时尚的衣物选择！" + getRandomClosingPhrase();
                 displayMessage(finalMessage, 'ai');
                 return;
             }
@@ -443,7 +443,7 @@
             const progressBar = document.getElementById('progress-bar');
             
             if (currentRound <= maxRounds) {
-                messageCounter.textContent = `第${currentRound}轮/共15轮`;
+                messageCounter.textContent = `第${currentRound}轮/共10轮`;
                 
                 // 更新进度条
                 const progress = ((currentRound-1) / maxRounds) * 100;
@@ -468,4 +468,5 @@
         document.getElementById('user-input').focus();
     </script>
 </body>
+
 </html>
